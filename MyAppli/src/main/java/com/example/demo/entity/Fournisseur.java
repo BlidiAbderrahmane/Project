@@ -33,7 +33,11 @@ public class Fournisseur implements Serializable {
 	private int tel_fournisseur;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy="facture")
+	@OneToMany(mappedBy="fournisseur")
 	private List<Facture> facture;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy="fournisseur")
+	private List<Commande_Prd> id_commande_produit;
 	
 }
