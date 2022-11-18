@@ -35,5 +35,5 @@ public class Fournisseur implements Serializable {
 	@JsonIgnore
 	@OneToMany(mappedBy="facture")
 	private List<Facture> facture;
-
+	
 }
