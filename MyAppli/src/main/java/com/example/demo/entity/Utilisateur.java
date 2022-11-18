@@ -1,10 +1,5 @@
 package com.example.demo.entity;
 
-<<<<<<< Updated upstream
-public class Utilisateur {
-
-}
-=======
 import java.io.Serializable;
 import java.util.Date;
 
@@ -41,6 +36,4 @@ public class Utilisateur implements Serializable{
 	@JsonFormat(pattern="dd-MM-YYYY")
 	@Column(name="dateNaissance")
 	private Date dateNaissance_util;
-
 }
->>>>>>> Stashed changes
