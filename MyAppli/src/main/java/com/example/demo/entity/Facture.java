@@ -43,10 +43,10 @@ public class Facture implements Serializable {
 	
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 	@ManyToOne(fetch=FetchType.LAZY, optional=false)
-	@JoinColumn(name="id_fournisseur", referencedColumnName="id")
+	@JoinColumn(name="id_fournisseur", referencedColumnName="id_fournisseur")
 	@OnDelete (action=OnDeleteAction.CASCADE)
 	private Fournisseur fournisseur;
 	
-	@ManyToMany(mappedBy="fournisseurs")
+	@ManyToMany(mappedBy="factures")
 	List<Produit> produits;
 }

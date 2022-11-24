@@ -26,13 +26,13 @@ public class Commande_Prd implements Serializable {
 	
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 	@ManyToOne(fetch=FetchType.LAZY, optional=false)
-	@JoinColumn(name="id_prd", referencedColumnName="id")
+	@JoinColumn(name="id_prd", referencedColumnName="id_prd")
 	@OnDelete (action=OnDeleteAction.CASCADE)
 	private Produit produit;
 	
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 	@ManyToOne(fetch=FetchType.LAZY, optional=false)
-	@JoinColumn(name="id_fournisseur", referencedColumnName="id")
+	@JoinColumn(name="id_fournisseur", referencedColumnName="id_fournisseur")
 	@OnDelete (action=OnDeleteAction.CASCADE)
 	private Fournisseur fournisseur;
 	
