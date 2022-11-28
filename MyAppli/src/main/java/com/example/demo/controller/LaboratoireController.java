@@ -29,10 +29,10 @@ public class LaboratoireController {
 	}
 	
 	@PutMapping("/Modifier/{id}")
-	public ResponseEntity<?> ModifierLaboratoire (@PathVariable Long id, @RequestBody Laboratoire famille) {
+	public ResponseEntity<?> ModifierLaboratoire (@PathVariable Long id, @RequestBody Laboratoire laboratoire) {
 		Laboratoire laboratoireExist= laboService.findLaboById(id);
 		System.out.println(laboratoireExist.getId_labo());
-		laboratoireExist.setLib_labo(famille.getLib_labo());
+		laboratoireExist.setLib_labo(laboratoire.getLib_labo());
 		Laboratoire savedLabo=laboService.saveLaboratoire(laboratoireExist);
 		return ResponseEntity.ok().body(savedLabo);
 	}
