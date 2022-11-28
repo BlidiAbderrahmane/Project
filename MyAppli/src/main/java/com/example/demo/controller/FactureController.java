@@ -17,13 +17,13 @@ public class FactureController {
 	@Autowired
 	private FactureService factService;
 	
-	@PostMapping("/AjouterFact")
+	@PostMapping("/Ajouter")
 	public Facture AjouterFacture(@RequestBody Facture fact) {
 		factService.saveFactureAchat(fact);
 		return fact;
 	}
 	
-	@GetMapping("/ImprimerFact/{id}")
+	@GetMapping("/Imprimer/{id}")
 	public Facture ImprimerFacture(@PathVariable Long id) {
 		return factService.findFactureAchat(id);
 	}
