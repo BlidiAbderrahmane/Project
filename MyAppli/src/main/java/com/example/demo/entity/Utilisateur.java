@@ -47,4 +47,97 @@ public class Utilisateur implements Serializable{
 	
 	@ManyToMany(mappedBy="utilisateurs")
 	List<Produit> produits;
+
+	public Utilisateur() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Utilisateur(Long id_util, String nom_util, String prenom_util, String adresse_util, String email_util,
+			int codePostal_util, Date dateNaissance_util, List<Fournisseur> fournisseur, List<Produit> produits) {
+		super();
+		this.id_util = id_util;
+		this.nom_util = nom_util;
+		this.prenom_util = prenom_util;
+		this.adresse_util = adresse_util;
+		this.email_util = email_util;
+		this.codePostal_util = codePostal_util;
+		this.dateNaissance_util = dateNaissance_util;
+		this.fournisseur = fournisseur;
+		this.produits = produits;
+	}
+
+	public Long getId_util() {
+		return id_util;
+	}
+
+	public void setId_util(Long id_util) {
+		this.id_util = id_util;
+	}
+
+	public String getNom_util() {
+		return nom_util;
+	}
+
+	public void setNom_util(String nom_util) {
+		this.nom_util = nom_util;
+	}
+
+	public String getPrenom_util() {
+		return prenom_util;
+	}
+
+	public void setPrenom_util(String prenom_util) {
+		this.prenom_util = prenom_util;
+	}
+
+	public String getAdresse_util() {
+		return adresse_util;
+	}
+
+	public void setAdresse_util(String adresse_util) {
+		this.adresse_util = adresse_util;
+	}
+
+	public String getEmail_util() {
+		return email_util;
+	}
+
+	public void setEmail_util(String email_util) {
+		this.email_util = email_util;
+	}
+
+	public int getCodePostal_util() {
+		return codePostal_util;
+	}
+
+	public void setCodePostal_util(int codePostal_util) {
+		this.codePostal_util = codePostal_util;
+	}
+
+	public Date getDateNaissance_util() {
+		return dateNaissance_util;
+	}
+
+	public void setDateNaissance_util(Date dateNaissance_util) {
+		this.dateNaissance_util = dateNaissance_util;
+	}
+
+	public List<Fournisseur> getFournisseur() {
+		return fournisseur;
+	}
+
+	public void setFournisseur(List<Fournisseur> fournisseur) {
+		this.fournisseur = fournisseur;
+	}
+
+	public List<Produit> getProduits() {
+		return produits;
+	}
+
+	public void setProduits(List<Produit> produits) {
+		this.produits = produits;
+	}
+	
+	
 }

@@ -25,4 +25,42 @@ public class Famille implements  Serializable {
 	@JsonIgnore
 	@OneToMany(mappedBy="famille")
 	private List<Produit> produits;
+
+	public Famille(Long id_famille, String lib_famille, List<Produit> produits) {
+		super();
+		this.id_famille = id_famille;
+		this.lib_famille = lib_famille;
+		this.produits = produits;
+	}
+
+	public Famille() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Long getId_famille() {
+		return id_famille;
+	}
+
+	public void setId_famille(Long id_famille) {
+		this.id_famille = id_famille;
+	}
+
+	public String getLib_famille() {
+		return lib_famille;
+	}
+
+	public void setLib_famille(String lib_famille) {
+		this.lib_famille = lib_famille;
+	}
+
+	public List<Produit> getProduits() {
+		return produits;
+	}
+
+	public void setProduits(List<Produit> produits) {
+		this.produits = produits;
+	}
+	
+	
 }

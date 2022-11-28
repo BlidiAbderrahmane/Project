@@ -52,4 +52,89 @@ public class Fournisseur implements Serializable {
 	@JoinColumn(name="id_util", referencedColumnName="id_util")
 	@OnDelete (action=OnDeleteAction.CASCADE)
 	private Utilisateur utilisateur;
+
+	public Fournisseur(Long id_fournisseur, String nom_fournisseur, String adresse_fournisseur,
+			String email_fournisseur, int tel_fournisseur, List<Facture> facture,
+			List<Commande_Prd> id_commande_produit, Utilisateur utilisateur) {
+		super();
+		this.id_fournisseur = id_fournisseur;
+		this.nom_fournisseur = nom_fournisseur;
+		this.adresse_fournisseur = adresse_fournisseur;
+		this.email_fournisseur = email_fournisseur;
+		this.tel_fournisseur = tel_fournisseur;
+		this.facture = facture;
+		this.id_commande_produit = id_commande_produit;
+		this.utilisateur = utilisateur;
+	}
+
+	public Fournisseur() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Long getId_fournisseur() {
+		return id_fournisseur;
+	}
+
+	public void setId_fournisseur(Long id_fournisseur) {
+		this.id_fournisseur = id_fournisseur;
+	}
+
+	public String getNom_fournisseur() {
+		return nom_fournisseur;
+	}
+
+	public void setNom_fournisseur(String nom_fournisseur) {
+		this.nom_fournisseur = nom_fournisseur;
+	}
+
+	public String getAdresse_fournisseur() {
+		return adresse_fournisseur;
+	}
+
+	public void setAdresse_fournisseur(String adresse_fournisseur) {
+		this.adresse_fournisseur = adresse_fournisseur;
+	}
+
+	public String getEmail_fournisseur() {
+		return email_fournisseur;
+	}
+
+	public void setEmail_fournisseur(String email_fournisseur) {
+		this.email_fournisseur = email_fournisseur;
+	}
+
+	public int getTel_fournisseur() {
+		return tel_fournisseur;
+	}
+
+	public void setTel_fournisseur(int tel_fournisseur) {
+		this.tel_fournisseur = tel_fournisseur;
+	}
+
+	public List<Facture> getFacture() {
+		return facture;
+	}
+
+	public void setFacture(List<Facture> facture) {
+		this.facture = facture;
+	}
+
+	public List<Commande_Prd> getId_commande_produit() {
+		return id_commande_produit;
+	}
+
+	public void setId_commande_produit(List<Commande_Prd> id_commande_produit) {
+		this.id_commande_produit = id_commande_produit;
+	}
+
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
+	}
+
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
+	}
+	
+	
 }

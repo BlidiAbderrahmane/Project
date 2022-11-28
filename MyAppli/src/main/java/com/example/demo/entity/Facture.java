@@ -49,4 +49,80 @@ public class Facture implements Serializable {
 	
 	@ManyToMany(mappedBy="factures")
 	List<Produit> produits;
+	
+
+	public Facture() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Facture(Long id_fact_achat, Date date, double total_ht, double total_tva, double total_ttc,
+			Fournisseur fournisseur, List<Produit> produits) {
+		super();
+		this.id_fact_achat = id_fact_achat;
+		this.date = date;
+		this.total_ht = total_ht;
+		this.total_tva = total_tva;
+		this.total_ttc = total_ttc;
+		this.fournisseur = fournisseur;
+		this.produits = produits;
+	}
+
+	public Long getId_fact_achat() {
+		return id_fact_achat;
+	}
+
+	public void setId_fact_achat(Long id_fact_achat) {
+		this.id_fact_achat = id_fact_achat;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public double getTotal_ht() {
+		return total_ht;
+	}
+
+	public void setTotal_ht(double total_ht) {
+		this.total_ht = total_ht;
+	}
+
+	public double getTotal_tva() {
+		return total_tva;
+	}
+
+	public void setTotal_tva(double total_tva) {
+		this.total_tva = total_tva;
+	}
+
+	public double getTotal_ttc() {
+		return total_ttc;
+	}
+
+	public void setTotal_ttc(double total_ttc) {
+		this.total_ttc = total_ttc;
+	}
+
+	public Fournisseur getFournisseur() {
+		return fournisseur;
+	}
+
+	public void setFournisseur(Fournisseur fournisseur) {
+		this.fournisseur = fournisseur;
+	}
+
+	public List<Produit> getProduits() {
+		return produits;
+	}
+
+	public void setProduits(List<Produit> produits) {
+		this.produits = produits;
+	}
+	
+	
 }

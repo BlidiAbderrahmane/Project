@@ -41,4 +41,60 @@ public class Commande_Prd implements Serializable {
 	
 	@Column(name="dateFourni")
 	private Date dateFourni;
+	
+	
+	
+	public Commande_Prd() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Commande_Prd(Long id, Produit produit, Fournisseur fournisseur, int quantiteFourni, Date dateFourni) {
+		super();
+		this.id = id;
+		this.produit = produit;
+		this.fournisseur = fournisseur;
+		this.quantiteFourni = quantiteFourni;
+		this.dateFourni = dateFourni;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Produit getProduit() {
+		return produit;
+	}
+
+	public void setProduit(Produit produit) {
+		this.produit = produit;
+	}
+
+	public Fournisseur getFournisseur() {
+		return fournisseur;
+	}
+
+	public void setFournisseur(Fournisseur fournisseur) {
+		this.fournisseur = fournisseur;
+	}
+
+	public int getQuantiteFourni() {
+		return quantiteFourni;
+	}
+
+	public void setQuantiteFourni(int quantiteFourni) {
+		this.quantiteFourni = quantiteFourni;
+	}
+
+	public Date getDateFourni() {
+		return dateFourni;
+	}
+
+	public void setDateFourni(Date dateFourni) {
+		this.dateFourni = dateFourni;
+	}
 }

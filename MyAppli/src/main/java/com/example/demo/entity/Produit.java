@@ -73,4 +73,116 @@ public class Produit implements Serializable {
 	@JoinColumn(name="id_famille", referencedColumnName="id_famille")
 	@OnDelete (action=OnDeleteAction.CASCADE)
 	private Famille famille;
+
+	public Produit(Long id_prd, String lib_prd, String description_prd, Double prix_prd, Date dateAjout_prd,
+			Float prix_livr, List<Facture> factures, List<Utilisateur> utilisateurs,
+			List<Commande_Prd> id_commande_produit, Laboratoire laboratoire, Famille famille) {
+		super();
+		this.id_prd = id_prd;
+		this.lib_prd = lib_prd;
+		this.description_prd = description_prd;
+		this.prix_prd = prix_prd;
+		this.dateAjout_prd = dateAjout_prd;
+		this.prix_livr = prix_livr;
+		this.factures = factures;
+		this.utilisateurs = utilisateurs;
+		this.id_commande_produit = id_commande_produit;
+		this.laboratoire = laboratoire;
+		this.famille = famille;
+	}
+
+	public Produit() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Long getId_prd() {
+		return id_prd;
+	}
+
+	public void setId_prd(Long id_prd) {
+		this.id_prd = id_prd;
+	}
+
+	public String getLib_prd() {
+		return lib_prd;
+	}
+
+	public void setLib_prd(String lib_prd) {
+		this.lib_prd = lib_prd;
+	}
+
+	public String getDescription_prd() {
+		return description_prd;
+	}
+
+	public void setDescription_prd(String description_prd) {
+		this.description_prd = description_prd;
+	}
+
+	public Double getPrix_prd() {
+		return prix_prd;
+	}
+
+	public void setPrix_prd(Double prix_prd) {
+		this.prix_prd = prix_prd;
+	}
+
+	public Date getDateAjout_prd() {
+		return dateAjout_prd;
+	}
+
+	public void setDateAjout_prd(Date dateAjout_prd) {
+		this.dateAjout_prd = dateAjout_prd;
+	}
+
+	public Float getPrix_livr() {
+		return prix_livr;
+	}
+
+	public void setPrix_livr(Float prix_livr) {
+		this.prix_livr = prix_livr;
+	}
+
+	public List<Facture> getFactures() {
+		return factures;
+	}
+
+	public void setFactures(List<Facture> factures) {
+		this.factures = factures;
+	}
+
+	public List<Utilisateur> getUtilisateurs() {
+		return utilisateurs;
+	}
+
+	public void setUtilisateurs(List<Utilisateur> utilisateurs) {
+		this.utilisateurs = utilisateurs;
+	}
+
+	public List<Commande_Prd> getId_commande_produit() {
+		return id_commande_produit;
+	}
+
+	public void setId_commande_produit(List<Commande_Prd> id_commande_produit) {
+		this.id_commande_produit = id_commande_produit;
+	}
+
+	public Laboratoire getLaboratoire() {
+		return laboratoire;
+	}
+
+	public void setLaboratoire(Laboratoire laboratoire) {
+		this.laboratoire = laboratoire;
+	}
+
+	public Famille getFamille() {
+		return famille;
+	}
+
+	public void setFamille(Famille famille) {
+		this.famille = famille;
+	}
+	
+	
 }
