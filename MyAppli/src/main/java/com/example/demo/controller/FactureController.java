@@ -23,8 +23,4 @@ public class FactureController {
 		return fact;
 	}
 	
-	@GetMapping("/Imprimer/{id}")
-	public Facture ImprimerFacture(@PathVariable Long id) {
-		return factService.findFactureAchat(id);
-	}
 }

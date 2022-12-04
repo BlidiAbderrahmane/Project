@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.entity.Famille;
 import com.example.demo.entity.Fournisseur;
 import com.example.demo.entity.Produit;
+import com.example.demo.service.FamilleService;
 import com.example.demo.service.ProduitService;
 
 @RestController
@@ -22,6 +23,9 @@ import com.example.demo.service.ProduitService;
 public class ProduitController {
 	@Autowired
 	private ProduitService prodService;
+	
+	@Autowired
+	private FamilleService famService;
 	
 	@PostMapping("/Ajouter")
 	public Produit AjouterProduit(@RequestBody Produit produit) {
@@ -55,6 +59,21 @@ public class ProduitController {
 	@GetMapping("/Rechercher/{keyword}")
 	public List<Produit> RechercherProduit(@PathVariable String keyword) {
 		return prodService.getAllProdByLib(keyword);
+	}
+	
+	@PutMapping("/AjouterProduitCategorie/{idProd}/{idFamille}")
+	public ResponseEntity<?> AjouterProduitCategorie (@PathVariable Long idProd, @PathVariable Long idFamille) {
+		Produit produitExist= prodService.findProduitById(idProd);
+		Famille famille= famService.findFamById(idFamille);
+		System.out.println(produitExist.getId_prd());
+		produitExist.setFamille(famille);
+		Produit savedProduit=prodService.saveProduit(produitExist);
+		return ResponseEntity.ok().body(savedProduit);
+	}
+	
+	@GetMapping("/ListeFournisseur")
+	public List<Produit> ListeFournisseur(@PathVariable Long id) {
+		return prodService.getAllProdByFournisseur(id);
 	}
 	
 	@GetMapping("/ListeMarque")

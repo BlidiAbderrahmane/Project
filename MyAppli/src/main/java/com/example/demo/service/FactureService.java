@@ -14,7 +14,4 @@ public class FactureService {
 		return fact.save(facture);
 	}
 	
-	public Facture findFactureAchat(Long id) {
-		return fact.findById(id).get();
-	}
 }

@@ -29,6 +29,10 @@ public class ProduitService {
 		return prod.FindProdByFamille(id);
 	}
 	
+	public List<Produit> getAllProdByFournisseur(Long id) {
+		return prod.FindProdByFournisseur(id);
+	}
+	
 	public List<Produit> getAllProdByLabo(Long id) {
 		return prod.FindProdByLabo(id);
 	}
