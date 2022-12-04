@@ -34,6 +34,9 @@ public class Utilisateur implements Serializable{
 	@Column(name="email")
 	private String email_util;
 	
+	@Column(name="mot_de_passe")
+	private String mdp_util;
+	
 	@Column(name="codePostal")
 	private int codePostal_util;
 	
