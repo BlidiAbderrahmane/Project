@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,9 +25,6 @@ public class ProduitController {
 	@Autowired
 	private ProduitService prodService;
 	
-	@Autowired
-	private FamilleService famService;
-	
 	@PostMapping("/Ajouter")
 	public Produit AjouterProduit(@RequestBody Produit produit) {
 		prodService.saveProduit(produit);
@@ -46,6 +44,12 @@ public class ProduitController {
 		return ResponseEntity.ok().body(savedProduit);
 	}
 	
+	@DeleteMapping("/Supprimer/{id}")
+	public String SupprimerProduit(@PathVariable Long id) {
+		prodService.deleteProduitById(id);
+		return "Suppression du Produit est effectuée";
+	}
+	
 	@GetMapping("/Consulter/{id}")
 	public Produit ConsulterProduit(@PathVariable Long id) {
 		return prodService.findProduitById(id);
@@ -61,15 +65,6 @@ public class ProduitController {
 		return prodService.getAllProdByLib(keyword);
 	}
 	
-	@PutMapping("/AjouterProduitCategorie/{idProd}/{idFamille}")
-	public ResponseEntity<?> AjouterProduitCategorie (@PathVariable Long idProd, @PathVariable Long idFamille) {
-		Produit produitExist= prodService.findProduitById(idProd);
-		Famille famille= famService.findFamById(idFamille);
-		System.out.println(produitExist.getId_prd());
-		produitExist.setFamille(famille);
-		Produit savedProduit=prodService.saveProduit(produitExist);
-		return ResponseEntity.ok().body(savedProduit);
-	}
 	
 	@GetMapping("/ListeFournisseur")
 	public List<Produit> ListeFournisseur(@PathVariable Long id) {

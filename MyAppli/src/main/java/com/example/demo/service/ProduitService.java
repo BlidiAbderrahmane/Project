@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.entity.Famille;
 import com.example.demo.entity.Produit;
 import com.example.demo.repository.ProduitRepository;
 
@@ -19,6 +20,11 @@ public class ProduitService {
 	
 	public Produit findProduitById(Long id) {
 		return prod.findById(id).get();
+	}
+	
+	public void deleteProduitById(Long id) {
+		Produit produit = prod.getOne(id);
+		prod.delete(produit);
 	}
 	
 	public List<Produit> getAllProd() {
