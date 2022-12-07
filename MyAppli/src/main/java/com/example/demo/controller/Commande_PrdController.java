@@ -24,13 +24,13 @@ public class Commande_PrdController {
 	@Autowired
 	private Commande_PrdService cprdService;
 	
-	@PostMapping("/Ajouter")
+	@PostMapping("/ajouter")
 	public Commande_Prd AjouterCommande_Prd(@RequestBody Commande_Prd commande_prd) {
 		cprdService.saveCommande_Prd(commande_prd);
 		return commande_prd;
 	}
 	
-	@PutMapping("/Modifier/{id}")
+	@PutMapping("/modifier/{id}")
 	public ResponseEntity<?> ModifierCommande_Prd (@PathVariable Long id, @RequestBody Commande_Prd commande_prd) {
 		Commande_Prd commande_prdExist= cprdService.findCommande_PrdById(id);
 		System.out.println(commande_prdExist.getId());
@@ -40,18 +40,18 @@ public class Commande_PrdController {
 		return ResponseEntity.ok().body(savedCprd);
 	}
 	
-	@DeleteMapping("/Supprimer/{id}")
+	@DeleteMapping("/supprimer/{id}")
 	public String SupprimerCommande_Prd(@PathVariable Long id) {
 		cprdService.deleteCommande_PrdById(id);
 		return "Suppression du Commande est effectuée";
 	}
 	
-	@GetMapping("/Liste")
+	@GetMapping("/liste")
 	public List<Commande_Prd> ListeCommande_Prd() {
 		return cprdService.getAllCommande_Prd();
 	}
 	
-	@GetMapping("/Consulter/{id}")
+	@GetMapping("/consulter/{id}")
 	public Commande_Prd ConsulterCommande_Prd(@PathVariable Long id) {
 		return cprdService.findCommande_PrdById(id);
 	}

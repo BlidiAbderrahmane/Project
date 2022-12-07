@@ -22,13 +22,13 @@ public class FamilleController {
 	@Autowired
 	private FamilleService famService;
 	
-	@PostMapping("/Ajouter")
+	@PostMapping("/ajouter")
 	public Famille AjouterFamille(@RequestBody Famille famille) {
 		famService.saveFamille(famille);
 		return famille;
 	}
 	
-	@PutMapping("/Modifier/{id}")
+	@PutMapping("/modifier/{id}")
 	public ResponseEntity<?> ModifierFamille (@PathVariable Long id, @RequestBody Famille famille) {
 		Famille familleExist= famService.findFamById(id);
 		System.out.println(familleExist.getId_famille());
@@ -37,13 +37,13 @@ public class FamilleController {
 		return ResponseEntity.ok().body(savedFam);
 	}
 	
-	@DeleteMapping("/Supprimer/{id}")
+	@DeleteMapping("/supprimer/{id}")
 	public String SupprimerFamille(@PathVariable Long id) {
 		famService.deleteFamilleById(id);
 		return "Suppression du Famille est effectuée";
 	}
 	
-	@GetMapping("/Liste")
+	@GetMapping("/liste")
 	public List<Famille> ListeFamille() {
 		return famService.getAllFam();
 	}

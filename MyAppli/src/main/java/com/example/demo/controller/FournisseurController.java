@@ -20,13 +20,13 @@ public class FournisseurController {
 	@Autowired
 	private FournisseurService fourService;
 	
-	@PostMapping("/Ajouter")
+	@PostMapping("/ajouter")
 	public Fournisseur AjouterFournisseur(@RequestBody Fournisseur fournisseur) {
 		fourService.saveFournisseur(fournisseur);
 		return fournisseur;
 	}
 	
-	@PutMapping("/Modifier/{id}")
+	@PutMapping("/modifier/{id}")
 	public ResponseEntity<?> ModifierFournisseur(@PathVariable Long id, @RequestBody Fournisseur fournisseur) {
 		Fournisseur fournisseurExist = fourService.findFournisseurById(id);
 		System.out.println(fournisseurExist.getId_fournisseur());
@@ -38,13 +38,13 @@ public class FournisseurController {
 		return ResponseEntity.ok().body(savedFournisseur);
 	}
 	
-	@DeleteMapping("/Supprimer/{id}")
+	@DeleteMapping("/supprimer/{id}")
 	public String SupprimerFournisseur(@PathVariable Long id) {
 		fourService.deleteFournisseurById(id);
 		return "Suppression du Fournisseur est effectuée";
 	}
 	
-	@GetMapping("/Consulter/{id}")
+	@GetMapping("/consulter/{id}")
 	public Fournisseur ConsulterFournisseur(@PathVariable Long id) {
 		return fourService.findFournisseurById(id);
 	}

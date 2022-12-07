@@ -17,7 +17,7 @@ public class FactureController {
 	@Autowired
 	private FactureService factService;
 	
-	@PostMapping("/Ajouter")
+	@PostMapping("/ajouter")
 	public Facture AjouterFacture(@RequestBody Facture fact) {
 		factService.saveFactureAchat(fact);
 		return fact;

@@ -57,13 +57,15 @@ public class Utilisateur implements Serializable{
 	}
 
 	public Utilisateur(Long id_util, String nom_util, String prenom_util, String adresse_util, String email_util,
-			int codePostal_util, Date dateNaissance_util, List<Fournisseur> fournisseur, List<Produit> produits) {
+			String mdp_util, int codePostal_util, Date dateNaissance_util, List<Fournisseur> fournisseur,
+			List<Produit> produits) {
 		super();
 		this.id_util = id_util;
 		this.nom_util = nom_util;
 		this.prenom_util = prenom_util;
 		this.adresse_util = adresse_util;
 		this.email_util = email_util;
+		this.mdp_util = mdp_util;
 		this.codePostal_util = codePostal_util;
 		this.dateNaissance_util = dateNaissance_util;
 		this.fournisseur = fournisseur;
@@ -108,6 +110,16 @@ public class Utilisateur implements Serializable{
 
 	public void setEmail_util(String email_util) {
 		this.email_util = email_util;
+	}
+
+	
+
+	public String getMdp_util() {
+		return mdp_util;
+	}
+
+	public void setMdp_util(String mdp_util) {
+		this.mdp_util = mdp_util;
 	}
 
 	public int getCodePostal_util() {

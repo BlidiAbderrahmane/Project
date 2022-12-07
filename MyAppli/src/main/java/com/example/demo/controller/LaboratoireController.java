@@ -22,13 +22,13 @@ public class LaboratoireController {
 	@Autowired
 	private LaboratoireService laboService;
 	
-	@PostMapping("/Ajouter")
+	@PostMapping("/ajouter")
 	public Laboratoire AjouterLaboratoire(@RequestBody Laboratoire laboratoire) {
 		laboService.saveLaboratoire(laboratoire);
 		return laboratoire;
 	}
 	
-	@PutMapping("/Modifier/{id}")
+	@PutMapping("/modifier/{id}")
 	public ResponseEntity<?> ModifierLaboratoire (@PathVariable Long id, @RequestBody Laboratoire laboratoire) {
 		Laboratoire laboratoireExist= laboService.findLaboById(id);
 		System.out.println(laboratoireExist.getId_labo());
@@ -37,13 +37,13 @@ public class LaboratoireController {
 		return ResponseEntity.ok().body(savedLabo);
 	}
 	
-	@DeleteMapping("/Supprimer/{id}")
+	@DeleteMapping("/supprimer/{id}")
 	public String SupprimerLaboratoire (@PathVariable Long id) {
 		laboService.deleteLaboratoireById(id);
 		return "Suppression du Laboratoire est effectuée";
 	}
 	
-	@GetMapping("/Liste")
+	@GetMapping("/liste")
 	public List<Laboratoire> ListeLaboratoire() {
 		return laboService.getAllLabo();
 	}

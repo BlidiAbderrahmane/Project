@@ -25,13 +25,13 @@ public class ProduitController {
 	@Autowired
 	private ProduitService prodService;
 	
-	@PostMapping("/Ajouter")
+	@PostMapping("/ajouter")
 	public Produit AjouterProduit(@RequestBody Produit produit) {
 		prodService.saveProduit(produit);
 		return produit;
 	}
 	
-	@PutMapping("/Modifier/{id}")
+	@PutMapping("/modifier/{id}")
 	public ResponseEntity<?> ModifierProduit (@PathVariable Long id, @RequestBody Produit produit) {
 		Produit produitExist= prodService.findProduitById(id);
 		System.out.println(produitExist.getId_prd());
@@ -44,39 +44,39 @@ public class ProduitController {
 		return ResponseEntity.ok().body(savedProduit);
 	}
 	
-	@DeleteMapping("/Supprimer/{id}")
+	@DeleteMapping("/supprimer/{id}")
 	public String SupprimerProduit(@PathVariable Long id) {
 		prodService.deleteProduitById(id);
 		return "Suppression du Produit est effectuée";
 	}
 	
-	@GetMapping("/Consulter/{id}")
+	@GetMapping("/consulter/{id}")
 	public Produit ConsulterProduit(@PathVariable Long id) {
 		return prodService.findProduitById(id);
 	}
 	
-	@GetMapping("/Liste")
+	@GetMapping("/liste")
 	public List<Produit> ListeProduit() {
 		return prodService.getAllProd();
 	}
 	
-	@GetMapping("/Rechercher/{keyword}")
+	@GetMapping("/rechercher/{keyword}")
 	public List<Produit> RechercherProduit(@PathVariable String keyword) {
 		return prodService.getAllProdByLib(keyword);
 	}
 	
 	
-	@GetMapping("/ListeFournisseur")
+	@GetMapping("/listeFournisseur")
 	public List<Produit> ListeFournisseur(@PathVariable Long id) {
 		return prodService.getAllProdByFournisseur(id);
 	}
 	
-	@GetMapping("/ListeMarque")
+	@GetMapping("/listeMarque")
 	public List<Produit> ListeMarque(@PathVariable Long id) {
 		return prodService.getAllProdByLabo(id);
 	}
 	
-	@GetMapping("/ListeCategorie")
+	@GetMapping("/listeCategorie")
 	public List<Produit> ListeCategorie(@PathVariable Long id) {
 		return prodService.getAllProdByFamille(id);
 	}

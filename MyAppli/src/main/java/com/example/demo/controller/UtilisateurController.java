@@ -19,13 +19,13 @@ public class UtilisateurController {
 	@Autowired
 	private UtilisateurService utilService;
 	
-	@PostMapping("/Ajouter")
+	@PostMapping("/ajouter")
 	public Utilisateur AjouterUtilisateur(@RequestBody Utilisateur utilisateur) {
 		utilService.saveUtilisateur(utilisateur);
 		return utilisateur;
 	}
 	
-	@PutMapping("/Modifier/{id}")
+	@PutMapping("/modifier/{id}")
 	public ResponseEntity<?> ModifierUtilisateur (@PathVariable Long id, @RequestBody Utilisateur utilisateur) {
 		Utilisateur utilisateurExist= utilService.findUtilisateurById(id);
 		System.out.println(utilisateurExist.getId_util());
@@ -33,13 +33,14 @@ public class UtilisateurController {
 		utilisateurExist.setPrenom_util(utilisateur.getPrenom_util());
 		utilisateurExist.setAdresse_util(utilisateur.getAdresse_util());
 		utilisateurExist.setEmail_util(utilisateur.getEmail_util());
+		utilisateurExist.setMdp_util(utilisateur.getMdp_util());
 		utilisateurExist.setCodePostal_util(utilisateur.getCodePostal_util());
 		utilisateurExist.setDateNaissance_util(utilisateur.getDateNaissance_util());
 		Utilisateur savedUtil=utilService.saveUtilisateur(utilisateurExist);
 		return ResponseEntity.ok().body(savedUtil);
 	}
 	
-	@DeleteMapping("/Supprimer/{id}")
+	@DeleteMapping("/supprimer/{id}")
 	public String SupprimerUtilisateur (@PathVariable Long id) {
 		utilService.deleteUtilisateurById(id);
 		return "Suppression du Utilisateur est effectuée";
