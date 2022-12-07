@@ -28,7 +28,7 @@ public class Facture implements Serializable {
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id_fact_achat;
 	
-	@JsonFormat(pattern="dd-MM-YYYY")
+	@JsonFormat(pattern="dd/MM/yyyy")
 	@Column(name="date")
 	private Date date;
 	

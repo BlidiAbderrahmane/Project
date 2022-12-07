@@ -60,23 +60,17 @@ public class ProduitController {
 		return prodService.getAllProd();
 	}
 	
-	@GetMapping("/rechercher/{keyword}")
-	public List<Produit> RechercherProduit(@PathVariable String keyword) {
-		return prodService.getAllProdByLib(keyword);
-	}
-	
-	
-	@GetMapping("/listeFournisseur")
+	@GetMapping("/listeFournisseur/{id}")
 	public List<Produit> ListeFournisseur(@PathVariable Long id) {
 		return prodService.getAllProdByFournisseur(id);
 	}
 	
-	@GetMapping("/listeMarque")
+	@GetMapping("/listeMarque/{id}")
 	public List<Produit> ListeMarque(@PathVariable Long id) {
 		return prodService.getAllProdByLabo(id);
 	}
 	
-	@GetMapping("/listeCategorie")
+	@GetMapping("/listeCategorie/{id}")
 	public List<Produit> ListeCategorie(@PathVariable Long id) {
 		return prodService.getAllProdByFamille(id);
 	}

@@ -16,6 +16,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -39,6 +40,7 @@ public class Commande_Prd implements Serializable {
 	@Column(name="quantiteFourni")
 	private int quantiteFourni;
 	
+	@JsonFormat(pattern="dd/MM/yyyy")
 	@Column(name="dateFourni")
 	private Date dateFourni;
 	

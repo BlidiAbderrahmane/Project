@@ -43,7 +43,4 @@ public class ProduitService {
 		return prod.FindProdByLabo(id);
 	}
 	
-	public List<Produit> getAllProdByLib(String keyword) {
-		return prod.FindProdByLib(keyword);
-	}
 }

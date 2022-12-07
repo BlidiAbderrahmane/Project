@@ -20,6 +20,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -38,6 +39,7 @@ public class Produit implements Serializable {
 	@Column(name="prix_prd")
 	private Double prix_prd;
 	
+	@JsonFormat(pattern="dd/MM/yyyy")
 	@Column(name="dateAjout_prd")
 	private Date dateAjout_prd;
 	

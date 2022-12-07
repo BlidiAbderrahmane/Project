@@ -15,9 +15,6 @@ public interface ProduitRepository extends JpaRepository <Produit,Long> {
 	@Query(value="select * from t_produit where id_labo=:idLabo",nativeQuery=true)
 	public List<Produit> FindProdByLabo(@Param(value="idLabo") Long id);
 	
-	@Query(value="select * from t_produit where lib_prd like '%:keyword%'",nativeQuery=true)
-	public List<Produit> FindProdByLib(@Param(value="keyword") String keyword);
-	
-	@Query(value="select tp.id_prd, tp.lib_prd, tp.description_prd, tp.prix_prd, tp.dateajout_prd, tp.prix_livr, tp.id_famille, tp.id_labo from t_produit tp, t_commandeprd tcp where tcp.id_fournisseur=:idFournisseur and tp.id_prd=tcp.id_prd",nativeQuery=true)
+	@Query(value="select DISTINCT(tp.id_prd), tp.lib_prd, tp.description_prd, tp.prix_prd, tp.date_ajout_prd, tp.prix_livr, tp.id_famille, tp.id_labo from t_produit tp, t_commande_prd tcp where tcp.id_fournisseur= :idFournisseur and tp.id_prd=tcp.id_prd",nativeQuery=true)
 	public List<Produit> FindProdByFournisseur(@Param(value="idFournisseur") Long id);
 }

@@ -40,7 +40,7 @@ public class Utilisateur implements Serializable{
 	@Column(name="codePostal")
 	private int codePostal_util;
 	
-	@JsonFormat(pattern="dd-MM-YYYY")
+	@JsonFormat(pattern="dd/MM/yyyy")
 	@Column(name="dateNaissance")
 	private Date dateNaissance_util;
 	
