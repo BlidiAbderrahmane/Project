@@ -1,8 +1,11 @@
 package com.example.demo.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.entity.Laboratoire;
 import com.example.demo.entity.Utilisateur;
 import com.example.demo.repository.UtilisateurRepository;
 
@@ -22,5 +25,9 @@ public class UtilisateurService {
 	
 	public Utilisateur findUtilisateurById(Long id) {
 		return util.findById(id).get();
+	}
+	
+	public List<Utilisateur> getAllUtil() {
+		return util.findAll();
 	}
 }
