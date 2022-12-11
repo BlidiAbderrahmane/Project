@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table(name="T_Laboratoire")
 public class Laboratoire implements  Serializable {
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id
 	private Long id_labo;
 
 	@Column(name="libelle")
