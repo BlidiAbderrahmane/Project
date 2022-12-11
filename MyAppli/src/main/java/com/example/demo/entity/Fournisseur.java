@@ -48,7 +48,7 @@ public class Fournisseur implements Serializable {
 	private List<Commande_Prd> id_commande_produit;
 	
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-	@ManyToOne(fetch=FetchType.LAZY, optional=false)
+	@ManyToOne(fetch=FetchType.EAGER, optional=false)
 	@JoinColumn(name="id_util", referencedColumnName="id_util")
 	@OnDelete (action=OnDeleteAction.CASCADE)
 	private Utilisateur utilisateur;

@@ -42,7 +42,7 @@ public class Facture implements Serializable {
 	private double total_ttc;
 	
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-	@ManyToOne(fetch=FetchType.LAZY, optional=false)
+	@ManyToOne(fetch=FetchType.EAGER, optional=false)
 	@JoinColumn(name="id_fournisseur", referencedColumnName="id_fournisseur")
 	@OnDelete (action=OnDeleteAction.CASCADE)
 	private Fournisseur fournisseur;

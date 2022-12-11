@@ -65,13 +65,13 @@ public class Produit implements Serializable {
 	private List<Commande_Prd> id_commande_produit;
 	
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-	@ManyToOne(fetch=FetchType.LAZY, optional=false)
+	@ManyToOne(fetch=FetchType.EAGER, optional=false)
 	@JoinColumn(name="id_labo", referencedColumnName="id_labo")
 	@OnDelete (action=OnDeleteAction.CASCADE)
 	private Laboratoire laboratoire;
 	
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-	@ManyToOne(fetch=FetchType.LAZY, optional=false)
+	@ManyToOne(fetch=FetchType.EAGER, optional=false)
 	@JoinColumn(name="id_famille", referencedColumnName="id_famille")
 	@OnDelete (action=OnDeleteAction.CASCADE)
 	private Famille famille;
