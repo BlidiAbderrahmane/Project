@@ -25,7 +25,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name="T_Facture")
 public class Facture implements Serializable {
 	
-	@Id
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id_fact_achat;
 	
 	@JsonFormat(pattern="dd/MM/yyyy")

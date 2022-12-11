@@ -22,7 +22,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @Table(name="T_CommandePrd")
 public class Commande_Prd implements Serializable {
-	@Id
+	
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
