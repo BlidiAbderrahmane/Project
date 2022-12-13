@@ -43,9 +43,8 @@ public class Commande_PrdController {
 	}
 	
 	@DeleteMapping("/supprimer/{id}")
-	public String SupprimerCommande_Prd(@PathVariable Long id) {
+	public void SupprimerCommande_Prd(@PathVariable Long id) {
 		cprdService.deleteCommande_PrdById(id);
-		return "Suppression du Commande est effectuée";
 	}
 	
 	@GetMapping("/liste")

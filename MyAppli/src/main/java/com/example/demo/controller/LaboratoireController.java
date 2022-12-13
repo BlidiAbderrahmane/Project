@@ -40,9 +40,8 @@ public class LaboratoireController {
 	}
 	
 	@DeleteMapping("/supprimer/{id}")
-	public String SupprimerLaboratoire (@PathVariable Long id) {
+	public void SupprimerLaboratoire (@PathVariable Long id) {
 		laboService.deleteLaboratoireById(id);
-		return "Suppression du Laboratoire est effectuée";
 	}
 	
 	@GetMapping("/liste")

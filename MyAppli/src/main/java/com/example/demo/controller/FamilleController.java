@@ -40,9 +40,8 @@ public class FamilleController {
 	}
 	
 	@DeleteMapping("/supprimer/{id}")
-	public String SupprimerFamille(@PathVariable Long id) {
+	public void SupprimerFamille(@PathVariable Long id) {
 		famService.deleteFamilleById(id);
-		return "Suppression du Famille est effectuée";
 	}
 	
 	@GetMapping("/liste")

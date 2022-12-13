@@ -47,9 +47,8 @@ public class UtilisateurController {
 	}
 	
 	@DeleteMapping("/supprimer/{id}")
-	public String SupprimerUtilisateur (@PathVariable Long id) {
+	public void SupprimerUtilisateur (@PathVariable Long id) {
 		utilService.deleteUtilisateurById(id);
-		return "Suppression du Utilisateur est effectuée";
 	}
 	
 	@GetMapping("/liste")

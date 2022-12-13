@@ -47,9 +47,8 @@ public class ProduitController {
 	}
 	
 	@DeleteMapping("/supprimer/{id}")
-	public String SupprimerProduit(@PathVariable Long id) {
+	public void SupprimerProduit(@PathVariable Long id) {
 		prodService.deleteProduitById(id);
-		return "Suppression du Produit est effectuée";
 	}
 	
 	@GetMapping("/consulter/{id}")

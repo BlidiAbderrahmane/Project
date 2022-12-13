@@ -44,9 +44,8 @@ public class FournisseurController {
 	}
 	
 	@DeleteMapping("/supprimer/{id}")
-	public String SupprimerFournisseur(@PathVariable Long id) {
+	public void SupprimerFournisseur(@PathVariable Long id) {
 		fourService.deleteFournisseurById(id);
-		return "Suppression du Fournisseur est effectuée";
 	}
 	
 	@GetMapping("/consulter/{id}")
