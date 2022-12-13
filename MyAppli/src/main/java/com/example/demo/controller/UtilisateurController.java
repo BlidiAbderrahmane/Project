@@ -18,7 +18,7 @@ import com.example.demo.entity.Laboratoire;
 import com.example.demo.entity.Utilisateur;
 import com.example.demo.service.UtilisateurService;
 
-@CrossOrigin
+
 @RestController
 @RequestMapping("/utilisateurs")
 public class UtilisateurController {
